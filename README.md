@@ -1,3 +1,3 @@
-# data_structure
+# Data structures
 
 ### Data structure using C++
