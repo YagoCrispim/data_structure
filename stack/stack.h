@@ -3,12 +3,13 @@ typedef int StackItem;
 
 const int maxStackLength = 100;
 
-class Stack {
-  private:
+class Stack
+{
+private:
     int length;
-    StackItem* stack;
+    StackItem *stack;
 
-  public:
+public:
     // constructor
     Stack();
 
