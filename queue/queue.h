@@ -2,12 +2,13 @@ typedef int QueueItem;
 
 const int MAX_QUEUE_SIZE = 3;
 
-class Queue {
-  private:
+class Queue
+{
+private:
     int first, last;
-    QueueItem* queueStructure;
+    QueueItem *queueStructure;
 
-  public:
+public:
     Queue();
     ~Queue();
 

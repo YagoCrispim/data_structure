@@ -3,45 +3,50 @@
 
 using namespace std;
 
-int main() {
-  Queue queue1;
-  int option;
-  QueueItem item;
+int main()
+{
+    Queue queue1;
+    int option;
+    QueueItem item;
 
-  cout << "Queue generator\n";
+    cout << "Queue generator\n";
 
-  do {
-    cout << "\n0 - Stop program\n";
-    cout << "1 - Enqueue element\n";
-    cout << "2 - Dequeue element\n";
-    cout << "3 - Print queue\n";
-    cout << "Option: ";
+    do
+    {
+        cout << "\n0 - Stop program\n";
+        cout << "1 - Enqueue element\n";
+        cout << "2 - Dequeue element\n";
+        cout << "3 - Print queue\n";
+        cout << "Option: ";
 
-    cin >> option;
+        cin >> option;
 
-    if (option == 1) {
-      
-      cout << "\nElement to enqueue: ";
-      cin >> item;
+        if (option == 1)
+        {
 
-      queue1.enqueue(item);
+            cout << "\nElement to enqueue: ";
+            cin >> item;
 
-    } else if (option == 2) {
-      
-      item = queue1.dequeue();
-      cout << "\nRemoved element: " << item << endl;
-      queue1.print();
+            queue1.enqueue(item);
+        }
+        else if (option == 2)
+        {
 
-    } else if (option == 3) {
+            item = queue1.dequeue();
+            cout << "\nRemoved element: " << item << endl;
+            queue1.print();
+        }
+        else if (option == 3)
+        {
 
-      queue1.print();
+            queue1.print();
+        }
+        else
+        {
 
-    } else {
-      
-      cout << "\nInvalid option!\n";
+            cout << "\nInvalid option!\n";
+        }
+    } while (option != 0);
 
-    }
-  } while (option != 0);
-
-  return 0;
+    return 0;
 }
