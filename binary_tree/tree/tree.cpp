@@ -85,7 +85,26 @@ void BinarySearchTree::remove(Student student)
 
 void BinarySearchTree::find(Student& student, bool& found)
 {
+  found = false;
 
+  Node* temp = root;
+
+  while (temp != NULL) {
+    Student currentStudentRa = temp->student.getRa();
+
+    if(student.getRa() == currentStudentRa) {
+      student = temp->student;
+      found = true;
+      break;
+    }
+
+    if(student.getRa() > currentStudentRa) {
+      temp = temp->right;
+    }
+    else {
+      temp = temp->left;
+    }
+  }
 }
 
 void BinarySearchTree::printInOrder(Node* currentNode)
@@ -102,4 +121,3 @@ void BinarySearchTree::printPostOrder(Node* currentNode)
 {
 
 }
-
