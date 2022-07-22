@@ -1,13 +1,18 @@
-all: data_structures
+# o -c faz com que o nome do arquivo objeto seja o nome do arquivo original
+PROJ_NAME=data_structures
+all: objFolder $(PROJ_NAME)
 
-data_structures: menu.o main.o
-	g++ -o data_structures menu.o main.o
+$(PROJ_NAME): ./dist/main.o ./dist/menu.o
+	g++ -o ./dist/$(PROJ_NAME) ./dist/main.o ./dist/menu.o
 
-menu.o: ./stack/menu.cpp ./stack/menu.h
-	g++ -c -Wall -Werror -std=c++11 ./stack/menu.cpp
+./dist/main.o: main.cpp ./stack/menu.h
+	g++ -c -o ./dist/main.o main.cpp
 
-main.o: main.cpp ./stack/menu.h
-	g++ -c -Wall -Werror -std=c++11 main.cpp
+./dist/menu.o: ./stack/menu.cpp ./stack/menu.h
+	g++ -c -o ./dist/menu.o ./stack/menu.cpp
+
+objFolder:
+	@ mkdir -p dist
 
 clean:
-	rm -rf *.o *~ data_structures
+	rm -rf *.o *~ $(PROJ_NAME)
