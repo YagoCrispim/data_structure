@@ -1,8 +1,6 @@
-// Here the class functions will be implemented
 #include <iostream>
-#include "stack.h"
+#include "stack.hpp"
 
-// used to not write std::
 using namespace std;
 
 Stack::Stack()

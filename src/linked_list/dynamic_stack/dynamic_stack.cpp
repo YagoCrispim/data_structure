@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dynamic_stack.h"
+#include "dynamic_stack.hpp"
 #include <cstddef> // allow use of NULL
 
 using namespace std;

@@ -1,10 +1,11 @@
 #include <iostream>
-#include "stack.h"
+
+#include "stack_menu.hpp"
+#include "stack.hpp"
 
 using namespace std;
 
-int main()
-{
+void StackMenu::show() {
     Stack stack1;
     StackItem item;
     int option;
@@ -13,11 +14,11 @@ int main()
 
     do
     {
-        cout << "\n0 - Stop program.\n";
         cout << "1 - Insert element.\n";
         cout << "2 - Remove element.\n";
         cout << "3 - Print stack.\n";
         cout << "4 - Print stack length.\n";
+        cout << "\n0 - Stop program.\n";
 
         cin >> option;
 
@@ -34,15 +35,17 @@ int main()
 
             cout << "Removed element: " << item << endl;
         }
-        else if (3)
+        else if (option == 3)
         {
             stack1.print();
         }
-        else if (4)
+        else if (option == 4)
         {
             stack1.stackSize();
+        } else if (option == 0) {
+            exit(0);
+        } else {
+            cout << "Invalid option!\n";
         }
     } while (option != 0);
-
-    return 0;
 }
